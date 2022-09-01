@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="md5.min.js">
+
+    </script>
+</head>
+<body>
+    <form action="https://www.baidu.com/" method="post" onsubmit="return login()">
+        <p>
+            <span>用户名：</span><input type="text" id="username" name="username">
+        </p>
+
+        <p>
+            <span>密  码：</span><input type="password" id="input-password">
+        </p>
+        <input type="hidden" id="md5-password" name="password">
+        <button type="submit">提交</button>
+    </form>
+
+    <script>
+        function login(){
+            var uname = document.getElementById('username');
+            var pwd = document.getElementById('input-password');
+            var md5pwd = document.getElementById('md5-password');
+            md5pwd.value = md5(pwd.value);
+            return true;
+        }
+    </script>
+</body>
+</html>
